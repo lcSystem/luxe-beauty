@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-jakarta: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color-scheme: light;
+}
+
+/* Luxury selection */
+::selection {
+  background-color: #E6DCD2;
+  color: #131211;
+}
+
+::-moz-selection {
+  background-color: #E6DCD2;
+  color: #131211;
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #FAF8F5;
+  color: #131211;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
+  font-family: var(--font-jakarta), -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: -0.01em;
+  background-color: #FAF8F5;
+}
+
+/* Subtle, ultra-refined scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DDD3C4;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A880;
+}
+
+/* Respect user motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Editorial typography utilities */
+.font-editorial-serif {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #C5A880 0%, #E9DFD0 50%, #9A7D55 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hide scrollbar utility for touch sliders */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
